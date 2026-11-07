@@ -1,0 +1,13 @@
+# secrets and local data: never commit
+.env
+app-data/
+
+# python / OS noise
+__pycache__/
+*.pyc
+.DS_Store
+
+# local test clips
+*.wav
+*.m4a
+*.mp3

@@ -1,0 +1,16 @@
+services:
+  app:
+    build: ./app
+    container_name: daftar
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8787:8000"
+    volumes:
+      - ./app-data:/data
+    environment:
+      # Optional defaults; everything can also be set (and is stored) in the app's Settings page.
+      LLM_BASE_URL: ${LLM_BASE_URL:-https://api.openai.com/v1}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      STT_BASE_URL: ${STT_BASE_URL:-}
+      STT_API_KEY: ${STT_API_KEY:-}
+      STT_MODEL: ${STT_MODEL:-whisper-1}
